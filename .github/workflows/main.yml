@@ -11,6 +11,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions: # <-- این بخش اضافه شده است
+      contents: write # <-- این خط به اکشن اجازه پوش کردن می‌دهد
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
