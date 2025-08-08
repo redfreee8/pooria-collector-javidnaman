@@ -6,6 +6,8 @@ from typing import List
 # لیست لینک‌های سابسکریپشن شما
 SUB_LINKS: List[str] = [
     "https://raw.githubusercontent.com/liketolivefree/kobabi/main/sub.txt",
+    "https://lively-dream-c48b.mehdipost675.workers.dev",
+    "https://leader.itn24.ir/v2ray_configs.txt?rand=12345",
     "https://raw.githubusercontent.com/V2RAYCONFIGSPOOL/V2RAY_SUB/refs/heads/main/v2ray_configs.txt"
 ]
 
