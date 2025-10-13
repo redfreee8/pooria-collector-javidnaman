@@ -9,6 +9,7 @@ SUB_LINKS: List[str] = [
     "https://lively-dream-c48b.mehdipost675.workers.dev",
     "https://leader.itn24.ir/v2ray_configs.txt?rand=12345",
     "https://raw.githubusercontent.com/V2RAYCONFIGSPOOL/V2RAY_SUB/refs/heads/main/v2ray_configs.txt"
+    "https://pooria.redorg1.ir/api/configs"
 ]
 
 # نام فایل خروجی برای لینک ساب نهایی
