@@ -4,24 +4,25 @@ import urllib.parse
 import random
 from typing import List, Set
 
-# .لیستی از جاویدنامان خیزش زن، زندگی، آزادی. این لیست برای یادبود این عزیزان استفاده شده است
+# .لیستی از جاویدنامان خیزش زن، زندگی، آزادی به فینگلیش برای سازگاری با همه اپلیکیشن‌ها
 JAVID_NAMAN: List[str] = [
-    "مهسا امینی", "نیکا شاکرمی", "سارینا اسماعیل‌زاده", "حدیث نجفی", "مینو مجیدی", "غزاله چلابی",
-    "حنانه کیا", "محسن شکاری", "مجیدرضا رهنورد", "محمدمهدی کرمی", "سید محمد حسینی", "کیان پیرفلک",
-    "خدیجه نقدی", "جواد حیدری", "فرشته احمدی", "رضا شهپرنیا", "عرفان زمانی", "یلدا آقافضلی",
-    "ابوالفضل آدینه‌زاده", "اسرا پناهی", "محسن قیصری", "حمیدرضا روحی", "آیلار حقی", "سپهر مقصودی",
-    "مهدی زارع اشکذری", "دنیا فرهادی", "آرشیا امامقلی‌زاده", "نگین عبدالمالکی", "مهرشاد شهیدی",
-    "سارینا ساعدی", "کومار درافتاده", "بهناز افشاری", "آرمین صیادی", "امیرحسین شمس", "دانیال پابندی",
-    "عرفان خزایی", "شیرین علیزاده", "فواد محمدی", "پویا شیدا", "مهرگان زحمتکش", "سیاوش محمودی",
-    "پدرام آذرنوش", "علی روزبهانی", "مهدی حضرتی", "آرمان عمادی", "میلاد سعیدیان‌جو", "آیدا رستمی",
-    "علی سیدی", "امیرمهدی فرخی‌پور", "سمانه نیک‌نام", "اسماعیل دزوار", "فریدون محمودی", "رضا لطفی",
-    "زکریا خیال", "مومن زندکریمی", "صدرالدین لیتانی", "عاطفه نعامی", "آرنیکا قائم مقامی",
-    "محمدحسن ترکمان", "مبین میرزایی", "جواد موسوی", "آیدین درویش", "متین نصرتی", "سینا نادری",
-    "عرفان کاکایی", "اسماعیل مولودی", "آرین مریدی", "سینا ملایری", "امید حسنی", "آرین خوش‌گواریان",
-    "روزبه خادمیان", "رضا کاظمی", "حمید گلی", "محمد حاجی‌رسول‌پور", "شمال خدیری‌پور", "ابراهیم میرزایی",
-    "نسرین قادری", "آرمان اکبری", "پوریا احمدی", "محمدامین هاشمی", "امیر فلاحت‌دوست", "میلاد خوشکام",
-    "هومن عبداللهی", "امیرمحمد رحیمی", "شورش نیکنام", "محمدحسین کمندلو", "محمود احمدی", "حمیدرضا براهویی",
-    "محمد اقبال شهنوازی", "محمد ریگی", "عمر شهنوازی", "سامر هاشم‌زهی", "متین قنبرزهی", "جابر شیروزهی"
+    "Mahsa Amini", "Nika Shakarami", "Sarina Esmailzadeh", "Hadis Najafi", "Minoo Majidi", "Ghazaleh Chalabi",
+    "Hananeh Kia", "Mohsen Shekari", "Majidreza Rahnavard", "Mohammad Mehdi Karami", "Seyed Mohammad Hosseini",
+    "Kian Pirfalak", "Khadijeh Naghdi", "Javad Heydari", "Fereshteh Ahmadi", "Reza Shahparnia", "Erfan Zamani",
+    "Yalda Aghafazli", "Abolfazl Adinezadeh", "Asra Panahi", "Mohsen Ghaysari", "Hamidreza Rouhi", "Aylar Haghi",
+    "Sepehr Maghsoudi", "Mehdi Zare Ashkzari", "Donya Farhadi", "Arshia Emamgholizadeh", "Negin Abdolmaleki",
+    "Mehrshad Shahidi", "Sarina Saedi", "Komar Daroftadeh", "Behnaz Afshari", "Armin Sayadi", "Amirhossein Shams",
+    "Danial Pabandi", "Erfan Khazaei", "Shirin Alizadeh", "Fouad Mohammadi", "Pouya Sheida", "Mehregan Zahmatkesh",
+    "Siavash Mahmoudi", "Pedram Azarnoush", "Ali Roozbahani", "Mehdi Hazrati", "Arman Emadi", "Milad Saeidianjou",
+    "Aida Rostami", "Ali Seyedi", "AmirMehdi Farrokhipour", "Samaneh Niknam", "Esmaeil Dezvar", "Fereydoun Mahmoudi",
+    "Reza Lotfi", "Zakaria Khiyal", "Momen Zandkarimi", "Sadraddin Litani", "Atefeh Naami", "Arnika Ghaem Maghami",
+    "MohammadHassan Torkaman", "Mobin Mirzaei", "Javad Mousavi", "Aidin Darvish", "Matin Nosrati", "Sina Naderi",
+    "Erfan Kakaei", "Esmaeil Moloudi", "Arian Moridi", "Sina Molayeri", "Omid Hassani", "Arian Khoshgouvarian",
+    "Rouzbeh Khademian", "Reza Kazemi", "Hamid Goli", "Mohammad Haji Rasoulpour", "Shomal Khadiripour",
+    "Ebrahim Mirzaei", "Nasrin Ghaderi", "Arman Akbari", "Pouria Ahmadi", "MohammadAmin Hashemi", "Amir Falahatdoust",
+    "Milad Khoshkam", "Houman Abdollahi", "AmirMohammad Rahimi", "Shouresh Niknam", "MohammadHossein Kamandloo",
+    "Mahmoud Ahmadi", "Hamidreza Barahouyi", "Mohammad Eghbal Shahnavazi", "Mohammad Rigi", "Omar Shahnavazi",
+    "Samer Hashemzehi", "Matin Ghanbarzehi", "Jaber Shirouzehi"
 ]
 
 # لیست لینک‌های سابسکریپشن شما
@@ -75,8 +76,6 @@ def main():
         print("لیست نام‌ها خالی است. برنامه متوقف شد.")
         return
 
-    # --- تغییر اصلی: تصادفی‌سازی در هر بار اجرا ---
-    # دیگر از تاریخ استفاده نمی‌کنیم، بنابراین با هر بار اجرا ترتیب نام‌ها عوض می‌شود
     shuffled_names = JAVID_NAMAN[:]
     random.shuffle(shuffled_names)
     print("\nترتیب نام‌ها به صورت تصادفی برای این اجرا مشخص شد.")
@@ -100,11 +99,9 @@ def main():
     for i, config in enumerate(sorted_unique_configs):
         base_link = config.split('#')[0]
         
-        # انتخاب نام از لیست به هم ریخته شده
         name_index = i % len(shuffled_names)
         javid_nam = shuffled_names[name_index]
         
-        # --- تغییر اصلی: اضافه کردن پیشوند POORIA ---
         new_name = f"POORIA {javid_nam}"
         
         encoded_name = urllib.parse.quote(new_name)
