@@ -28,10 +28,11 @@ jobs:
       - name: Run Collector Script
         run: python collector.py
 
-      - name: Commit and Push new sub file
-        run: |
-          git config --global user.name "GitHub Actions Bot"
-          git config --global user.email "actions-bot@github.com"
-          git add POORIARED.txt
-          git diff --quiet && git diff --staged --quiet || git commit -m "Updated subscription file"
-          git push
+- name: Commit and Push new sub file
+  run: |
+    git config --global user.name "GitHub Actions Bot"
+    git config --global user.email "actions-bot@github.com"
+    # این خط باید با نام فایل در کد پایتون یکی باشد
+    git add POORIAJavidanIran.txt 
+    git diff --quiet && git diff --staged --quiet || git commit -m "Updated subscription file"
+    git push
