@@ -38,7 +38,7 @@ JAVID_NAMAN: List[str] = [
 # لیست لینک‌های سابسکریپشن شما
 SUB_LINKS: List[str] = [
     "https://raw.githubusercontent.com/liketolivefree/kobabi/main/sub.txt",
-    "https://long-credit-187f.mehdipost675.workers.dev/?token=jHfTut2MRAd9yyPUJQ7K05kiRFDW4hKV",
+    "https://pooriaarista140.pages.dev/api/configs",
     "https://withered-math-1242.mehdipost675.workers.dev/?token=U47yXioeT6Q4nwXbkDztDBQBsaDoB5UH",
     "https://raw.githubusercontent.com/arshiacomplus/v2rayExtractor/main/vless.html"
 ]
