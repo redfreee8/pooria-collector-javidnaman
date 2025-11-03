@@ -40,7 +40,7 @@ SUB_LINKS: List[str] = [
     "https://raw.githubusercontent.com/liketolivefree/kobabi/main/sub.txt",
     "https://long-credit-187f.mehdipost675.workers.dev/?token=jHfTut2MRAd9yyPUJQ7K05kiRFDW4hKV",
     "https://withered-math-1242.mehdipost675.workers.dev/?token=U47yXioeT6Q4nwXbkDztDBQBsaDoB5UH",
-    "https://lively-dream-c48b.mehdipost675.workers.dev/?token=fedfed7b41b828f17cfb2371c8ee16df"
+    "https://raw.githubusercontent.com/arshiacomplus/v2rayExtractor/main/vless.html"
 ]
 
 # نام فایل خروجی برای لینک ساب نهایی
